@@ -22,7 +22,6 @@ public class APITest {
 		.when()
 			.get("todo")
 		.then()
-			.log().all()
 			.statusCode(200);
 	}
 	
@@ -34,7 +33,6 @@ public class APITest {
 	.when()
 		.post("todo")
 	.then()
-		.log().all()
 		.statusCode(201);
 	}
 	
@@ -46,7 +44,6 @@ public class APITest {
 	.when()
 		.put("todo")
 	.then()
-		.log().all()
 		.statusCode(405)
 		.body("message", CoreMatchers.is("Request method 'PUT' not supported"));
 	}
@@ -59,7 +56,6 @@ public class APITest {
 	.when()
 		.post("todo")
 	.then()
-		.log().all()
 		.statusCode(400)
 		.body("message", CoreMatchers.is("Due date must not be in past"));
 	}
@@ -72,7 +68,6 @@ public class APITest {
 	.when()
 		.post("todo")
 	.then()
-		.log().all()
 		.statusCode(400)
 		.body("message", CoreMatchers.is("Fill the due date"));
 	}
@@ -85,11 +80,9 @@ public class APITest {
 	.when()
 		.post("todo")
 	.then()
-		.log().all()
 		.statusCode(400)
 		.body("message", CoreMatchers.is("Fill the task description"));
 	}	
-	
 		
 
 }
