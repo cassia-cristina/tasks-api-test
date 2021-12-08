@@ -1,0 +1,12 @@
+target/
+.settings
+.project
+.classpath
+
+### STS ###
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
